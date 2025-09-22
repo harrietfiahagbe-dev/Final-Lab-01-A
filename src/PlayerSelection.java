@@ -135,16 +135,16 @@ public class PlayerSelection {
 
         //Printing out the final results of the player
         System.out.println("The name of the player is: " + name);
-        System.out.println("The palyer is " + age + " years old. He/She is a " + player_type );
+        System.out.println("The player is " + age + " years old. He/She is a: " + player_type );
         System.out.println("He/She is:  " + height + " m tall.");
         System.out.println("He/She is:  " + weight + " lbs");
-        System.out.println("The Jersey Number of the player is  " + jersey_number);
-        System.out.println("Your player is a " + player_position);
-        System.out.println(attacker_response)
-        System.out.println("The eligibility status of the player is, he/she is " + Eligibility);
-        System.out.println("This is the lineup decsion, the player is on the " + lineup_final);
-        System.out.println("This is the final decision, the player would  " + final_decision);
-        System.out.println("Thank you for using our Platform, have a good !");
+        System.out.println("The Jersey Number of the player is:  " + jersey_number);
+        System.out.println("Your player is a: " + player_position);
+        System.out.println(attacker_response);;
+        System.out.println("The eligibility status of the player is, he/she is: " + Eligibility);
+        System.out.println("This is the lineup decsion, the player is on the: " + lineup_final);
+        System.out.println("This is the final decision, the player would:  " + final_decision);
+        System.out.println("Thank you for using our Platform, have a good day !");
 
 
 
