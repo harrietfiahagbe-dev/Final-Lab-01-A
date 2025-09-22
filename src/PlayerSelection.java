@@ -28,7 +28,7 @@ public class PlayerSelection {
         int current_weight;
         String Eligibility;
         String player_type;
-        String player_position= "";
+        String player_position = "";
         String linup_final;
 
         //Input from the user. (Basic Information, weight, height, name, age, etc.)
@@ -47,14 +47,67 @@ public class PlayerSelection {
         System.out.print("Enter your jersey number: ");
         jersey_number = input.nextInt();
 
-        //Performing Type conversion to change weight and weight to an integer
+
         //Coverting height to cm
         //Converting weight to Pounds
+        new_weight = POUND * weight;
+        new_height = height * METER;
+        //Performing Type conversion to change weight and weight to an integer
+        current_height = (int) new_height;
+        current_weight = (int) new_weight;
 
 
+        //Determining the Category for the player
+        if (age < 20) {
+            player_type = "Rising Star";
+            //System.out.println("Rising Star");
+        } else if (age >= 20 && age < 30) {
+            player_type = "Prime Player";
+            //System.out.println("Prime Player");
+        } else {
+            player_type = "Vetran";
+            //System.out.println("Vetran");
+
+            //Determining the position of the player
+            switch (jersey_number) {
+
+                case 1:
+                    player_position = "Goal kepper";
+                    break;
+
+                case 2:
+                case 5:
+                    player_position = "Defender";
+                    break;
+
+                case 6:
+                case 8:
+                    player_position = "midfielder";
+                    break;
+
+                case 7:
+                    player_position = "Winger";
+                    break;
+
+                case 9:
+                    player_position = "Striker";
+                    break;
+
+                case 10:
+                    player_position = "Play Maker";
+                    break;
 
 
+            }
 
-
+            //Checking the Eligibility of the player
+            boolean Eligible = (age >= 18) && (age < 35) && (current_weight <90);
+            if (Eligible){
+                Eligibility = "Eligible";
+                System.out.println(Eligibility);
+            }
+            else{
+                Eligibility = " Not Eligible";
+                System.out.println("Not Eligible");
+        }
     }
-}
