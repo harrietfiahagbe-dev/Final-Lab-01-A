@@ -30,6 +30,7 @@ public class PlayerSelection {
         String player_type;
         String player_position = "";
         String linup_final;
+        String final_decision;
 
         //Input from the user. (Basic Information, weight, height, name, age, etc.)
         System.out.print("Enter your name: ");
@@ -64,50 +65,63 @@ public class PlayerSelection {
         } else if (age >= 20 && age < 30) {
             player_type = "Prime Player";
             //System.out.println("Prime Player");
-        } else {
+         }else {
             player_type = "Vetran";
             //System.out.println("Vetran");
-
-            //Determining the position of the player
-            switch (jersey_number) {
-
-                case 1:
-                    player_position = "Goal kepper";
-                    break;
-
-                case 2:
-                case 5:
-                    player_position = "Defender";
-                    break;
-
-                case 6:
-                case 8:
-                    player_position = "midfielder";
-                    break;
-
-                case 7:
-                    player_position = "Winger";
-                    break;
-
-                case 9:
-                    player_position = "Striker";
-                    break;
-
-                case 10:
-                    player_position = "Play Maker";
-                    break;
-
-
-            }
-
-            //Checking the Eligibility of the player
-            boolean Eligible = (age >= 18) && (age < 35) && (current_weight <90);
-            if (Eligible){
-                Eligibility = "Eligible";
-                System.out.println(Eligibility);
-            }
-            else{
-                Eligibility = " Not Eligible";
-                System.out.println("Not Eligible");
         }
+        // Determining the position of the player
+        switch (jersey_number) {
+
+            case 1:
+                player_position = "Goal kepper";
+                break;
+
+            case 2:
+            case 5:
+                player_position = "Defender";
+                break;
+
+            case 6:
+            case 8:
+                player_position = "midfielder";
+                break;
+
+            case 7:
+                player_position = "Winger";
+                break;
+
+            case 9:
+                player_position = "Striker";
+                break;
+
+            case 10:
+                player_position = "Play Maker";
+                break;
+
+
+        }
+
+        //Checking the Eligibility of the player
+        boolean Eligible = (age >= 18) && (age < 35) && (current_weight < 90);
+        if (Eligible) {
+            Eligibility = "Eligible";
+            System.out.println(Eligibility);
+        } else {
+            Eligibility = " Not Eligible";
+            System.out.println("Not Eligible");
+        }
+
+        //Determining the Lineup Decision
+        if (player_type.equals("Prime Player")) {
+            if (current_weight < 80) {
+                linup_final = "Lineup";
+            } else {
+                linup_final = "Bench";
+            }
+        }
+
+        //Determining The final Decision
+        final_decision = (Eligibility.equals("Eligible")) ? "Play": "Rest";
+        System.out.println("The player is supposed to " + final_decision);
     }
+}
