@@ -29,8 +29,9 @@ public class PlayerSelection {
         String Eligibility;
         String player_type;
         String player_position = "";
-        String linup_final;
+        String lineup_final = "";
         String final_decision;
+        String attacker_response;
 
         //Input from the user. (Basic Information, weight, height, name, age, etc.)
         System.out.print("Enter your name: ");
@@ -105,23 +106,52 @@ public class PlayerSelection {
         boolean Eligible = (age >= 18) && (age < 35) && (current_weight < 90);
         if (Eligible) {
             Eligibility = "Eligible";
-            System.out.println(Eligibility);
+            //System.out.println(Eligibility);
         } else {
             Eligibility = " Not Eligible";
-            System.out.println("Not Eligible");
+            //System.out.println("Not Eligible");
         }
 
         //Determining the Lineup Decision
         if (player_type.equals("Prime Player")) {
             if (current_weight < 80) {
-                linup_final = "Lineup";
+                lineup_final = "Lineup";
             } else {
-                linup_final = "Bench";
+                lineup_final = "Bench";
             }
         }
 
         //Determining The final Decision
         final_decision = (Eligibility.equals("Eligible")) ? "Play": "Rest";
-        System.out.println("The player is supposed to " + final_decision);
+        //System.out.println("The player is supposed to " + final_decision);
+
+        //Checking the Attacker status of the player
+        if (jersey_number == 9 || jersey_number == 10 || jersey_number == 11 || jersey_number == 7) {
+            attacker_response = "Yes," + name + " you can have the attacker Jersey";
+        }
+        else{
+            attacker_response = "No, " + name+ " you cannot have the attacker Jersey";
+        }
+
+        //Printing out the final results of the player
+        System.out.println("The name of the player is: " + name);
+        System.out.println("The palyer is " + age + " years old. He/She is a " + player_type );
+        System.out.println("He/She is:  " + height + " m tall.");
+        System.out.println("He/She is:  " + weight + " lbs");
+        System.out.println("The Jersey Number of the player is  " + jersey_number);
+        System.out.println("Your player is a " + player_position);
+        System.out.println(attacker_response)
+        System.out.println("The eligibility status of the player is, he/she is " + Eligibility);
+        System.out.println("This is the lineup decsion, the player is on the " + lineup_final);
+        System.out.println("This is the final decision, the player would  " + final_decision);
+        System.out.println("Thank you for using our Platform, have a good !");
+
+
+
+
+
+
+
+
     }
 }
